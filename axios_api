@@ -1,0 +1,17 @@
+open weather map:
+==================
+api key:
+3fd756d3c6233eecf8a57b9da9ce4d07
+
+user: gowthaman@niit-karur.com
+password: regular password asusal.
+gowthaman@k
+--------------------
+how to handle api keys :
+=========================
+https://openweathermap.org/current
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+note:
+wait couple of hours to activate api key.
