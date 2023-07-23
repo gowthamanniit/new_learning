@@ -1,0 +1,192 @@
+find pip version:
+==================
+	pip --version
+
+	pip : prefered installer program.
+
+how to upgrade pip ?
+====================
+way 1 : python.exe -m pip install --upgrade pip
+way 2 : py -m pip install --upgrade pip
+way 3 : reinstall python software (latest)
+
+how to install django ?
+=======================
+	pip install django
+open script folder:
+        django-admin.py file installed
+
+how to uninstall django?
+=======================
+	pip uninstall django (don't do this)
+
+how to identify django version?
+===============================
+	python -m django --version
+
+how to create django project ?
+===============================
+syntax:
+	django-admin startproject projectname
+here projectname is userdefine.
+ex:
+scripts>django-admin startproject myproject
+
+how to run django in default view ?
+==================================
+scripts>cd myproject
+script/myproject> python manage.py runserver
+
+copy : http://127.0.0.1:8000/
+
+open browser:
+http://127.0.0.1:8000/
+
+=====================================day 2========16-5-23=========================
+how to create app?
+syntax:
+c:/.........................../scripts/myproject> py manage.py startapp appname
+ex:
+c:/.........................../scripts/myproject> py manage.py startapp myapp
+
+===================
+how to migrate app ?
+use: save changes
+c:/.........................../scripts/myproject>py manage.py migrate
+
+
+simple django program:
+=====================
+step 1: myapp--->views.py -->open
+
+	header file: from django.http import HttpResponse
+
+		     def userdefinefun(request):
+	                   return HttpResponse("<html> ............</html>")
+
+step 2: myproject --> myproject --> urls.py -->open
+
+	header file: from myapp  import views
+
+		     path('userdefinefun/',views.userdefinefunction),
+
+step 3: c:/.........................../scripts/myproject>py manage.py runserver
+
+step 4: open chrome or any browser:
+		http://127.0.0.1:8000/userdefinefunction
+
+
+========================================day 3========22-5-2023======================			
+
+format specifier/Control String : %d  %s  %f
+current date and time display
+combine tag
+loading html file using render
+=====================================day 4  ==========23-5-23=========================
+loading html file using loader module and get_template inbuilt function
+use of loader: to pass json object
+
+Json:
+	JavaScript Object Notation
+
+syntax:
+	var varname={
+		key:value,
+		key:value,
+		property:value
+	}
+
+ex:
+	var/let/const stud={
+		rno:1001,
+		sname:"gowthaman",
+		mark:99.3		
+	}
+
+nested object:
+	ex:
+	const stud={
+		rno:1001,
+		sname:'raja',
+		marks:{
+			tamil:44,
+			english:99,
+			maths:87,
+			science:89,
+			social:76
+		}				
+	}
+
+how to access json object values?
+	stud.rno
+	stud.sname
+	stud.marks.tamil
+	.............
+=================static file handling (css,javascript,images) 26-5-23=====
+
+1) create static folder inside your appfolder(myapp)
+2) create sub folder namely css.
+3) create .css file inside css folder
+4) create .html file inside templates folder
+    note: don't forget to add {% load static %}
+    open settings.py : '/static/'
+5) views (function add)
+6) urls 
+7) run
+======================1-6-2023==========================
+1) create folder namely "javascript" inside static folder
+2) create .js file inside javascript folder
+3) create .html file inside template folder
+    note: don't forget to add {% load static %}
+    open settings.py : '/static/'
+4) views (function add)
+5) urls (path add)
+6) run
+=====================2-6-23=================================
+1) create folder namely "images" inside static folder
+2) copy & paste sample pictures inside images folder
+3) create html file inside templates folder
+4) views
+5) urls
+6) run
+====================2-6-23======Forms===================
+use: it will create textbox,label,.... automattically
+
+1) create .py file inside myapp folder (ex: form.py)
+  ex:	
+	from django import forms
+	class Sample(forms.Form):
+	    rno=forms.charFiled(label="--",max_length=30)
+2) views.py open
+	from yourappfoldername.pythonfile import classname
+
+	ex:
+	from myapp.form import Student
+ex:
+def showform(request):
+    s1=Student()
+    return render(request,"pgm7.html",{'form':s1})
+3) urls
+4) templates --> html file(pgm7.html")
+	{% csrf_token %}
+	{{ form.as_p }}
+5) run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
